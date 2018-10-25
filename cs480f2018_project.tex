@@ -1,0 +1,150 @@
+\documentclass[11pt]{article}
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+%\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\newcommand{\assignmentduedate}{18 December}
+\newcommand{\assignmentassignedate}{ 25 October}
+\newcommand{\assignmentnumber}{Course Project}
+
+\newcommand{\labyear}{2018}
+\newcommand{\labtime}{7 pm}
+
+\newcommand{\assigneddate}{Assigned:  \assignmentassignedate, \labyear{} }
+\newcommand{\duedate}{Due:  \assignmentduedate, \labyear{} at \labtime{}}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+% Enable margin notes to catch student attention
+
+\usepackage{marginnote}
+\reversemarginpar
+\renewcommand*{\raggedrightmarginnote}{\centering}
+
+\newcommand{\caution}[1]{\null\hfill\LARGE{\faWarning{}}\newline\scriptsize{\em{#1}}}
+\newcommand{\discuss}[1]{\null\hfill\LARGE{\faCommentO{}}\newline\scriptsize{\em{#1}}}
+\newcommand{\resource}[1]{\null\hfill\LARGE{\faLink{}}\newline\scriptsize{\em{#1}}}
+\newcommand{\think}[1]{\null\hfill\LARGE{\faCogs{}}\newline\scriptsize{\em{#1}}}
+
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=magenta,
+}
+
+\usepackage{fancyhdr}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\usepackage{marginnote}
+\reversemarginpar
+\renewcommand*{\raggedrightmarginnote}{\centering}
+
+\fancyhf{}
+\rhead{Computer Science 480}
+\lhead{  \assignmentnumber{} }
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\labtitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 480 \\ Software Innovation I\\
+      Fall 2018\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\labtitle{ \assignmentnumber{} }
+\begin{center} \textbf{ \assigneddate{} \\ \duedate{} } \end{center} 
+\noindent \textbf{ }
+
+\section*{Objectives}
+Individual course project invites you to produce two comprehensive software portfolio pieces while utilizing the skills developed in the course. Specifically, you are first to develop a software portfolio piece in the area of your interest utilizing programming languages and technical tools of your choice.  Secondly, you will enhance your personal website  to ensure that it serves as an appropriate and comprehensive resource containing information about you. Both of these projects are to apply automated checking tools to ensure your source code and writing meet the correct standards. Additionally, you are to participate in an extensive peer review and editing process throughout the duration of this assignment. Finally, you are to utilize the appropriate Git practices, provide correct attributions, and to 
+
+\section*{Course Project Summary: Building a Portfolio}
+Unlike a resume a portfolio is a showcase of completed work rather than a description of experiences. For a computer scientist, developing an online portfolio is the ideal way to showcase your unique talents, skills and interests. A software portfolio can also serve as the evidence to support the claims you have made in your resume. If a resume is where you talk the talk, a portfolio is where you have to walk the walk.
+
+\subsection*{Portfolio Piece 1: Software Project}
+
+You are to extend an existing project that you have worked on in the past. You must store your software project in a GitHub course or personal repository. Your project repository should include a README file that provides a snapshot of the project with the following information:
+\begin{itemize}
+	\item Project name and description \\
+	-- Objective of the project
+	\item How to build and run the project
+	\item How to test the application
+	\item Software tools used
+	\item Tangible results
+\end{itemize}
+
+The source code for your project can be developed in any programming language, should be free of any errors, and contain appropriate documentation in the form of comments. Your source code must adhere to the coding standards, guides, and recommended practices (e.g., ISO, IEC, IEEE, PEP8). Your programs must also following coding styling guides for the language(s) used in your project, for example Google Styling Guides described at \url{https://github.com/google/styleguide}. 
+
+Your software project should also account for user experience, if appropriate, ease of use by other developers, security, and copyright issues.
+
+Your software project must adhere to the following additional requirements.
+\begin{enumerate}
+	\item Use Travis CI platform to continuously build and test code changes. Specifically, you can adopt linting tool(s) with Travis CI to check the writing in your project. Additionally, you should use Travis CI to test the correct building and execution of your source code. Finally, Travis CI should be used to check that your programs adhere to a styling standard of your choice. 
+	\item As you work on your project you must demonstrate the correct usage of the GitHub Flow. In particular, you need to create at least one additional branch, add commits for a specific extension/functionality, open a pull request, review your code, deploy and merge to master.
+	\item Your project must follow the standard directory conventions, found, for example, at \url{https://github.com/kriasoft/Folder-Structure-Conventions}.
+	\item Your project must contain an appropriate license and attributions as necessary.
+\end{enumerate} 
+
+\subsection*{Portfolio Piece 2: Website Project}
+You are also to build on Assignment 2 to produce a comprehensive professional website. In addition to the requirements outlined in Assignment 2, your website portfolio piece should satisfy the following guidelines.
+\begin{enumerate}
+	\item Contain no mistakes in writing or programming. 
+	\item Website to have a meaningful and a professional name.
+	\item Website to show personality and an intuitive flow.
+	\item Website to contain links to your software and website projects on GitHub, your StackOverflow account, your LinkedIn account, other social media, and your preferred contact methods. Please note that both GitHub and StackOverflow track the frequency of your usage. To show dedication to your field, you should try to be continuously active on both of these platforms.
+	\item Website to have an additional page that describes how you built your software project. Your software project repository should speak for itself, so do not duplicate content, but show how you got there. This is a chance for you to demonstrate that you are able to follow a process as developers tend to work by a process. If appropriate for your software project, this page is where you can add testimonials on using your software. 
+	\item Repository to follow the standard directory conventions, found, for example, at \url{https://github.com/kriasoft/Folder-Structure-Conventions}.
+	\item Repository to contain an appropriate license file and attributions as necessary.
+\end{enumerate}
+
+\subsection*{Peer Editing, Code Review and Presentations}
+Subsequent assignments in this course will invite you to participate in project peer editing process and code reviews. As a result of these activities you will find several issues created in your project repositories. You must resolve at least $80\%$ of the issues in your repositories for each portfolio piece project. Finally, you will be invited to present both of your projects in an informal discussion setting and a more formal presentation setting in class as the assignments for these tasks given later this semester will instruct. Please continue tracking analytics data from LinkedIn and your website as you will be asked to present on your findings during one of the presentations.
+
+%\vspace{-0.05in}
+\section*{Deliverables and Evaluation}
+%\vspace{-0.05in}
+
+You are invited to submit the following materials:
+\begin{enumerate}
+	\item Software project repository on GitHub fulfilling all of the requirements specified above. 
+	\item Website project repository on GitHub fulfilling all of the requirements specified above. 
+	\item Deployed and functional website. 
+\end{enumerate}
+
+Your grade for this assignment will be based on your timely submission of the items outlined above. The instructor will review the regularity of the commits in your repositories and the use of an appropriate language in your commit logs and issue and other comments. Your grade will be reduced for inconsistent effort throughout the duration of this assignment, any incomplete requirements as well as any external pieces that may jeopardize your portfolio, including additional non-functioning project repositories, multiple  websites containing professional information about you, incoherent directory structure, mistakes in writing, improper licensing, etc.
+
+\end{document}

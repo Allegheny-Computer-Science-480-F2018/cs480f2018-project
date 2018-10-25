@@ -1,0 +1,33 @@
+dist: trusty
+sudo: false
+
+# ignore the virtualenv that Travis creates
+env:
+  global:
+    - PIPENV_VENV_IN_PROJECT=1
+    - PIPENV_IGNORE_VIRTUALENVS=1
+
+# installations 
+before_install:
+- gem install mdl
+#- pip install --upgrade pip
+#- pip install pipenv
+#- npm install htmlhint -g
+
+# cache to improve build speed
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.pip-cache/
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+# run checks on Markdown writing through mdl and proselint
+# run checks on the html using htmlhint
+script:
+  # Markdown
+  - mdl README.md
+#  - proselint README.md
+#- htmlhint src/www/index.html
